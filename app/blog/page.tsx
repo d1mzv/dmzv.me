@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { getAllPosts, PostMetadata } from "@/lib/mdx"
 
-export default async function BlogPage() {
+export async function BlogPage() {
   const posts = await getAllPosts()
 
   return (
@@ -24,6 +24,17 @@ export default async function BlogPage() {
           </Card>
         </Link>
       ))}
+    </div>
+  )
+}
+
+// Default export for route
+export default async function BlogRoute() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-8">Blog</h1>
+      {/* @ts-expect-error Async Server Component */}
+      <BlogPage />
     </div>
   )
 } 

@@ -50,7 +50,7 @@ const projects: Project[] = [
   },
 ]
 
-export default function ProjectsPage() {
+export function ProjectsPage() {
   const [expandedProject, setExpandedProject] = useState<string | null>(null)
 
   return (
@@ -118,6 +118,16 @@ export default function ProjectsPage() {
             </Card>
           ))}
       </div>
+    </div>
+  )
+}
+
+// Default export for route
+export default function ProjectsRoute() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-8">Projects</h1>
+      <ProjectsPage />
     </div>
   )
 } 

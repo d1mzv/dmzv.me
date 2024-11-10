@@ -17,7 +17,7 @@ const videos: Video[] = [
   // Add more videos as needed
 ]
 
-export default function YoutubePage() {
+export function YoutubePage() {
   return (
     <div className="space-y-6">
       {videos.map((video) => (
@@ -39,6 +39,16 @@ export default function YoutubePage() {
           </CardContent>
         </Card>
       ))}
+    </div>
+  )
+}
+
+// Default export for route
+export default function YoutubeRoute() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-8">YouTube</h1>
+      <YoutubePage />
     </div>
   )
 } 

@@ -35,7 +35,7 @@ const socialLinks: SocialLink[] = [
   },
 ]
 
-export default function ContactsPage() {
+export function ContactsPage() {
   return (
     <Card className="max-w-2xl mx-auto">
       <CardHeader>
@@ -62,5 +62,15 @@ export default function ContactsPage() {
         </div>
       </CardContent>
     </Card>
+  )
+}
+
+// Default export for route
+export default function ContactsRoute() {
+  return (
+    <div>
+      <h1 className="text-3xl font-bold mb-8">Contacts</h1>
+      <ContactsPage />
+    </div>
   )
 } 
