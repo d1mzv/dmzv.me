@@ -20,11 +20,16 @@ export function MainNav() {
 
   const handleTabChange = (value: string) => {
     if (pathname === "/") {
-      // If we're on the home page, scroll to the section
-      const tab = tabs.find(t => t.value === value)
-      if (tab) {
-        const element = document.getElementById(tab.sectionId)
-        element?.scrollIntoView({ behavior: "smooth" })
+      if (value === "/") {
+        // For home tab, scroll to top of the page
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      } else {
+        // For other tabs, scroll to the section
+        const tab = tabs.find(t => t.value === value)
+        if (tab) {
+          const element = document.getElementById(tab.sectionId)
+          element?.scrollIntoView({ behavior: "smooth" })
+        }
       }
     } else {
       // If we're on another page, navigate to the route

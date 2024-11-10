@@ -31,7 +31,7 @@ export function MeSection() {
             <div className="text-center space-y-2">
               <h1 className="text-2xl font-bold">Hello, I&apos;m Dima</h1>
               <p className="text-muted-foreground">
-                I enjoy building stuff and bringing ideas to life through code.
+                I enjoy building stuff
               </p>
             </div>
           </div>
