@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
 const tabs = [
   { name: "🏠 Home", value: "/", sectionId: "me" },
@@ -13,7 +14,11 @@ const tabs = [
   { name: "📝 Blog", value: "/blog", sectionId: "blog" },
 ]
 
-export function MainNav() {
+interface MainNavProps {
+  variant: "mobile" | "desktop"
+}
+
+export function MainNav({ variant }: MainNavProps) {
   const router = useRouter()
   const pathname = usePathname()
 
@@ -31,7 +36,7 @@ export function MainNav() {
     }
   }
 
-  const handleTabChange = (value: string) => {
+  const handleNavigation = (value: string) => {
     if (pathname === "/") {
       if (value === "/") {
         window.scrollTo({ top: 0, behavior: "smooth" })
@@ -53,11 +58,26 @@ export function MainNav() {
     }
   }, [])
 
+  if (variant === "mobile") {
+    return (
+      <>
+        {tabs.map((tab) => (
+          <DropdownMenuItem
+            key={tab.value}
+            onClick={() => handleNavigation(tab.value)}
+          >
+            {tab.name}
+          </DropdownMenuItem>
+        ))}
+      </>
+    )
+  }
+
   return (
     <Tabs
       defaultValue={pathname}
       className="w-full"
-      onValueChange={handleTabChange}
+      onValueChange={handleNavigation}
     >
       <TabsList className="grid w-full grid-cols-5">
         {tabs.map((tab) => (
