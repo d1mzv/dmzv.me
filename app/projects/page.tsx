@@ -56,7 +56,7 @@ export function ProjectsPage() {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Active Projects</h2>
+        <h2 className="text-2xl font-bold">Active</h2>
         {projects
           .filter((project) => project.status === "active")
           .map((project) => (
@@ -87,7 +87,7 @@ export function ProjectsPage() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Inactive Projects</h2>
+        <h2 className="text-2xl font-bold">Inactive</h2>
         {projects
           .filter((project) => project.status === "inactive")
           .map((project) => (
