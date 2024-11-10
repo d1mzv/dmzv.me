@@ -15,7 +15,7 @@ export function MeSection() {
             <div className="relative w-32 h-32 rounded-full overflow-hidden bg-muted">
               {!imageError ? (
                 <Image
-                  src="/your-photo.jpeg"
+                  src="/ava.png"
                   alt="Dima"
                   fill
                   className="object-cover"

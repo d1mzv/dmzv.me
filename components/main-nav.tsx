@@ -6,12 +6,12 @@ import { usePathname, useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 const tabs = [
-  { name: "Me", value: "/", sectionId: "me" },
-  { name: "Projects", value: "/projects", sectionId: "projects" },
-  { name: "Career", value: "/career", sectionId: "career" },
-  { name: "YouTube", value: "/youtube", sectionId: "youtube" },
-  { name: "Blog", value: "/blog", sectionId: "blog" },
-  { name: "Contacts", value: "/contacts", sectionId: "contacts" },
+  { name: "🏠 Home", value: "/", sectionId: "me" },
+  { name: "🚀 Projects", value: "/projects", sectionId: "projects" },
+  { name: "💼 Career", value: "/career", sectionId: "career" },
+  { name: "📺 Videos", value: "/youtube", sectionId: "youtube" },
+  { name: "📝 Blog", value: "/blog", sectionId: "blog" },
+  { name: "📕 Contacts", value: "/contacts", sectionId: "contacts" },
 ]
 
 export function MainNav() {
