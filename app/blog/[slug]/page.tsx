@@ -2,14 +2,28 @@ import { notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllPosts, type PostMetadata } from "@/lib/mdx"
+import { ComponentProps } from "react"
 
-type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface Props {
+  params: {
+    slug: string;
+  }
 }
 
-export default async function BlogPost(props: Props) {
-  const params = await Promise.resolve(props.params)
+// Define proper types for the MDX components
+const components = {
+  h1: (props: ComponentProps<"h1">) => (
+    <h1 className="text-2xl font-bold my-4" {...props} />
+  ),
+  h2: (props: ComponentProps<"h2">) => (
+    <h2 className="text-xl font-bold my-3" {...props} />
+  ),
+  p: (props: ComponentProps<"p">) => (
+    <p className="my-2" {...props} />
+  ),
+}
+
+export default async function BlogPost({ params }: Props) {
   const slug = params.slug
   let post
 
@@ -42,7 +56,7 @@ export default async function BlogPost(props: Props) {
       </CardHeader>
       <CardContent>
         <div className="prose dark:prose-invert max-w-none">
-          <MDXRemote source={content} />
+          <MDXRemote source={content} components={components} />
         </div>
       </CardContent>
     </Card>

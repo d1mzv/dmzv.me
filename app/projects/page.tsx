@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import Image from 'next/image'
 
 interface Project {
   name: string
@@ -74,9 +75,11 @@ export function ProjectsPage() {
                 <p className="text-muted-foreground">{project.description}</p>
                 {expandedProject === project.name && project.imageUrl && (
                   <div className="mt-4">
-                    <img
+                    <Image 
                       src={project.imageUrl}
                       alt={project.name}
+                      width={800}
+                      height={400}
                       className="rounded-lg"
                     />
                   </div>
@@ -107,9 +110,11 @@ export function ProjectsPage() {
                 <p className="text-muted-foreground">{project.description}</p>
                 {expandedProject === project.name && project.imageUrl && (
                   <div className="mt-4">
-                    <img
+                    <Image 
                       src={project.imageUrl}
                       alt={project.name}
+                      width={800}
+                      height={400}
                       className="rounded-lg"
                     />
                   </div>

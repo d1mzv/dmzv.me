@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import Image from 'next/image'
 
 interface Job {
   company: string
@@ -16,6 +17,7 @@ const jobs: Job[] = [
     company: "PlanRadar",
     description: "B2B, documentation and task management in construction",
     period: "Current",
+    imageUrl: "/images/planradar.png"
   },
   {
     company: "Surprise",
@@ -62,9 +64,11 @@ export function CareerPage() {
             <p className="text-muted-foreground">{job.description}</p>
             {expandedJob === job.company && job.imageUrl && (
               <div className="mt-4">
-                <img
+                <Image 
                   src={job.imageUrl}
                   alt={job.company}
+                  width={800}
+                  height={400}
                   className="rounded-lg"
                 />
               </div>
