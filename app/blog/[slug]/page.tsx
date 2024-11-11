@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 import { getPostBySlug, getAllPosts, type PostMetadata } from "@/lib/mdx"
 import { ComponentProps } from "react"
 
@@ -10,7 +11,6 @@ interface Props {
   }
 }
 
-// Define proper types for the MDX components
 const components = {
   h1: (props: ComponentProps<"h1">) => (
     <h1 className="text-2xl font-bold my-4" {...props} />
@@ -43,6 +43,7 @@ export default async function BlogPost({ params }: Props) {
   }
 
   const { frontmatter, content } = post
+  const mdxSource = await serialize(content)
 
   return (
     <Card>
@@ -56,7 +57,7 @@ export default async function BlogPost({ params }: Props) {
       </CardHeader>
       <CardContent>
         <div className="prose dark:prose-invert max-w-none">
-          <MDXRemote source={content} components={components} />
+          <MDXRemote {...mdxSource} components={components} />
         </div>
       </CardContent>
     </Card>
