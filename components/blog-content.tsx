@@ -1,7 +1,7 @@
 export function BlogContent() {
   const posts = [
     {
-      title: "Journey to 1M ARR",
+      title: "First post",
       date: "2024-10-10",
       description: "In Progress",
       slug: "journey-in-tech",
