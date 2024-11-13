@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { useEffect } from "react"
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
@@ -19,7 +19,6 @@ interface MainNavProps {
 }
 
 export function MainNav({ variant }: MainNavProps) {
-  const router = useRouter()
   const pathname = usePathname()
 
   const scrollToSection = (elementId: string) => {
