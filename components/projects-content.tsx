@@ -56,8 +56,8 @@ export function ProjectsContent() {
 
   return (
     <div className="space-y-6">
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Active</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-2xl font-bold col-span-full">Active</h2>
         {projects
           .filter((project) => project.status === "active")
           .map((project) => (
@@ -73,24 +73,13 @@ export function ProjectsContent() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">{project.description}</p>
-                {expandedProject === project.name && project.imageUrl && (
-                  <div className="mt-4">
-                    <Image 
-                      src={project.imageUrl}
-                      alt={project.name}
-                      width={800}
-                      height={400}
-                      className="rounded-lg"
-                    />
-                  </div>
-                )}
               </CardContent>
             </Card>
           ))}
       </div>
 
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Inactive</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-2xl font-bold col-span-full">Inactive</h2>
         {projects
           .filter((project) => project.status === "inactive")
           .map((project) => (
@@ -108,17 +97,6 @@ export function ProjectsContent() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">{project.description}</p>
-                {expandedProject === project.name && project.imageUrl && (
-                  <div className="mt-4">
-                    <Image 
-                      src={project.imageUrl}
-                      alt={project.name}
-                      width={800}
-                      height={400}
-                      className="rounded-lg"
-                    />
-                  </div>
-                )}
               </CardContent>
             </Card>
           ))}
