@@ -51,14 +51,14 @@ export default function RootLayout({
           suppressHydrationWarning
         >
           <div className="flex min-h-screen flex-col">
-            <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-              <div className="flex h-14 items-center justify-between px-4">
-                <div className="container max-w-3xl mx-auto flex items-center">
+            <div className="fixed top-2 right-4 z-50">
+              <ThemeToggle />
+            </div>
+            <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              <div className="container max-w-3xl mx-auto">
+                <div className="flex h-14 items-center justify-center">
                   <MainNav variant="desktop" />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ThemeToggle />
-                  <div className="md:hidden">
+                  <div className="md:hidden absolute right-4">
                     <MobileNav />
                   </div>
                 </div>
