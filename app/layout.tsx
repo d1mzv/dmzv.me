@@ -57,7 +57,7 @@ export default function RootLayout({
               <div className="fixed top-2 right-4 z-50 hidden md:block">
                 <ThemeToggle />
               </div>
-              <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              <header className="sticky top-0 z-40 w-full border-b bg-gray-100 dark:bg-gray-900 backdrop-blur supports-[backdrop-filter]:bg-gray-100/80 dark:supports-[backdrop-filter]:bg-gray-900/80">
                 <div className="container max-w-3xl mx-auto">
                   <div className="flex h-14 items-center">
                     {/* Mobile View */}
