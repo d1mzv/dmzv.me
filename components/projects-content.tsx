@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import Image from 'next/image'
 
@@ -18,37 +18,37 @@ const projects: Project[] = [
     name: "Savedeck",
     description: "Unify and auto-sort your bookmarks",
     status: "active",
-    imageUrl: "/projects/savedeck.png",
+    imageUrl: "/savedeck-img.png",
   },
   {
     name: "Memobase",
     description: "Learn anything fast with AI flashcards",
     status: "active",
-    imageUrl: "/projects/memobase.png",
+    imageUrl: "/memobase-img.png",
   },
   {
     name: "Streakmap",
     description: "Visualise your habit progression",
     status: "active",
-    imageUrl: "/projects/streakmap.png",
+    imageUrl: "streakmap-img2.png",
   },
   {
     name: "Nadebook",
     description: "Practice Tool for CS",
     status: "active",
-    imageUrl: "/projects/nadebook.png",
+    imageUrl: "nadebook-img.png",
   },
   {
     name: "Mentisoft",
     description: "Software Outsourcing Agency",
     status: "inactive",
-    imageUrl: "/projects/mentisoft.png",
+    imageUrl: "mentisoft-img.png",
   },
   {
     name: "EasyTO",
     description: "Telegram bot for calculating inspection costs",
     status: "inactive",
-    imageUrl: "/projects/easyto.png",
+    imageUrl: "easyto-img.png",
   },
 ]
 
@@ -69,20 +69,23 @@ export function ProjectsContent() {
                 expandedProject === project.name ? null : project.name
               )}
             >
-              <CardHeader>
-                <CardTitle>{project.name}</CardTitle>
-              </CardHeader>
-              <div className="relative w-full aspect-video">
+              <div className="relative w-full aspect-video bg-muted flex items-center justify-center">
                 <Image
                   src={project.imageUrl}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  priority
+                  className="object-contain p-4"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <CardContent className="pt-4">
-                <p className="text-muted-foreground">{project.description}</p>
+              <div className="w-full h-[1px] bg-border" />
+              <CardContent className="p-4">
+                <p className="text-sm">
+                  <span className="font-semibold">{project.name}</span>
+                  {" — "}
+                  <span className="text-muted-foreground">{project.description}</span>
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -102,20 +105,23 @@ export function ProjectsContent() {
                 expandedProject === project.name ? null : project.name
               )}
             >
-              <CardHeader>
-                <CardTitle>{project.name}</CardTitle>
-              </CardHeader>
-              <div className="relative w-full aspect-video">
+              <div className="relative w-full aspect-video bg-muted flex items-center justify-center">
                 <Image
                   src={project.imageUrl}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  priority
+                  className="object-contain p-4"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <CardContent className="pt-4">
-                <p className="text-muted-foreground">{project.description}</p>
+              <div className="w-full h-[1px] bg-border" />
+              <CardContent className="p-4">
+                <p className="text-sm">
+                  <span className="font-semibold">{project.name}</span>
+                  {" — "}
+                  <span className="text-muted-foreground">{project.description}</span>
+                </p>
               </CardContent>
             </Card>
           ))}
