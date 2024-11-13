@@ -41,50 +41,44 @@ const jobs: Job[] = [
   },
 ]
 
-export function CareerContent() {
+export default function Page() {
   const [expandedJob, setExpandedJob] = useState<string | null>(null)
 
   return (
-    <div className="space-y-6">
-      {jobs.map((job) => (
-        <Card
-          key={job.company}
-          className={cn("cursor-pointer transition-all hover:shadow-md")}
-          onClick={() => setExpandedJob(
-            expandedJob === job.company ? null : job.company
-          )}
-        >
-          <CardHeader>
-            <CardTitle className="flex justify-between">
-              <span>{job.company}</span>
-              <span className="text-sm text-muted-foreground">{job.period}</span>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">{job.description}</p>
-            {expandedJob === job.company && job.imageUrl && (
-              <div className="mt-4">
-                <Image 
-                  src={job.imageUrl}
-                  alt={job.company}
-                  width={800}
-                  height={400}
-                  className="rounded-lg"
-                />
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  )
-}
-
-export default function Page() {
-  return (
     <div>
       <h1 className="text-3xl font-bold mb-8">Career</h1>
-      <CareerContent />
+      <div className="space-y-6">
+        {jobs.map((job) => (
+          <Card
+            key={job.company}
+            className={cn("cursor-pointer transition-all hover:shadow-md")}
+            onClick={() => setExpandedJob(
+              expandedJob === job.company ? null : job.company
+            )}
+          >
+            <CardHeader>
+              <CardTitle className="flex justify-between">
+                <span>{job.company}</span>
+                <span className="text-sm text-muted-foreground">{job.period}</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">{job.description}</p>
+              {expandedJob === job.company && job.imageUrl && (
+                <div className="mt-4">
+                  <Image 
+                    src={job.imageUrl}
+                    alt={job.company}
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 } 

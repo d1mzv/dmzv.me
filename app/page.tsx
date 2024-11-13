@@ -1,6 +1,6 @@
 import { MeSection } from "@/components/sections/me-section"
 import ProjectsPage from "@/app/projects/page"
-import { CareerContent } from "@/app/career/page"
+import { CareerContent } from "@/components/career-content"
 import YoutubePage from "@/app/youtube/page"
 import { Suspense } from "react"
 import BlogPage from './blog/page'
