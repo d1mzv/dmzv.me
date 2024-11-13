@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,9 @@ function MobileNav() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-[200px]">
-        <MainNav variant="mobile" />
+        <Suspense fallback={<div>Loading...</div>}>
+          <MainNav variant="mobile" />
+        </Suspense>
       </DropdownMenuContent>
     </DropdownMenu>
   );
@@ -56,7 +59,9 @@ export default function RootLayout({
             <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
               <div className="container max-w-3xl mx-auto">
                 <div className="flex h-14 items-center justify-center">
-                  <MainNav variant="desktop" />
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <MainNav variant="desktop" />
+                  </Suspense>
                   <div className="md:hidden absolute right-4">
                     <MobileNav />
                   </div>
