@@ -54,18 +54,22 @@ export default function RootLayout({
         >
           <Suspense fallback={<div>Loading app...</div>}>
             <div className="flex min-h-screen flex-col">
-              <div className="fixed top-2 right-4 z-50">
+              <div className="fixed top-2 right-4 z-50 hidden md:block">
                 <ThemeToggle />
               </div>
               <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container max-w-3xl mx-auto">
-                  <div className="flex h-14 items-center justify-center">
-                    <Suspense fallback={<div>Loading navigation...</div>}>
-                      <MainNav variant="desktop" />
-                    </Suspense>
-                    <div className="md:hidden absolute right-4">
-                      <Suspense fallback={null}>
-                        <MobileNav />
+                  <div className="flex h-14 items-center">
+                    {/* Mobile View */}
+                    <div className="md:hidden w-full flex justify-between items-center px-4">
+                      <MobileNav />
+                      <ThemeToggle />
+                    </div>
+                    
+                    {/* Desktop View */}
+                    <div className="hidden md:flex md:flex-1 md:items-center md:justify-center">
+                      <Suspense fallback={<div>Loading navigation...</div>}>
+                        <MainNav variant="desktop" />
                       </Suspense>
                     </div>
                   </div>
