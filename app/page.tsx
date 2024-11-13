@@ -1,7 +1,7 @@
 import { MeSection } from "@/components/sections/me-section"
-import ProjectsPage from "@/app/projects/page"
+import { ProjectsContent } from "@/components/projects-content"
 import { CareerContent } from "@/components/career-content"
-import YoutubePage from "@/app/youtube/page"
+import { YoutubeContent } from "@/components/youtube-content"
 import { Suspense } from "react"
 import BlogPage from './blog/page'
 
@@ -12,7 +12,7 @@ export default function Home() {
       
       <section id="projects" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Projects</h2>
-        <ProjectsPage />
+        <ProjectsContent />
       </section>
       
       <section id="career" className="pt-8">
@@ -22,7 +22,7 @@ export default function Home() {
       
       <section id="youtube" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Videos</h2>
-        <YoutubePage />
+        <YoutubeContent />
       </section>
       
       <section id="blog" className="pt-8">
