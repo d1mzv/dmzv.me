@@ -13,12 +13,12 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  {
-    platform: "GitHub",
-    username: "dimamzv",
-    url: "https://github.com/dimamzv",
-    icon: Github,
-  },
+  // {
+  //   platform: "GitHub",
+  //   username: "dimamzv",
+  //   url: "https://github.com/dimamzv",
+  //   icon: Github,
+  // },
   {
     platform: "Twitter",
     username: "dimamzv",
@@ -33,8 +33,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     platform: "Email",
-    username: "dimamzv@gmail.com",
-    url: "mailto:dimamzv@gmail.com",
+    username: "dmitry.maznev@gmail.com",
+    url: "mailto:dmitry.maznev@gmail.com",
     icon: Mail,
   },
 ]

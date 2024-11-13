@@ -21,7 +21,7 @@ export default function Home() {
       </section>
       
       <section id="youtube" className="pt-8">
-        <h2 className="text-3xl font-bold mb-4">YouTube</h2>
+        <h2 className="text-3xl font-bold mb-4">Videos</h2>
         <YoutubePage />
       </section>
       

@@ -10,9 +10,14 @@ interface Video {
 
 const videos: Video[] = [
   {
-    title: "Video Title 1",
-    description: "Video description goes here",
-    embedId: "your-youtube-video-id-1",
+    title: "Tyrol",
+    description: "Winter 2022",
+    embedId: "63mX8DBOgEM",
+  },
+  {
+    title: "Meteroa & Rhodes",
+    description: "Summer 2021",
+    embedId: "BVakBAUZj0o",
   },
   // Add more videos as needed
 ]

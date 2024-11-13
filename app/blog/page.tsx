@@ -7,7 +7,6 @@ export default async function BlogPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">Blog</h1>
       <div className="space-y-6">
         {posts.map((post: PostMetadata) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
