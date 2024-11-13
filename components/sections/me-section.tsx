@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { useState } from "react"
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import { Twitter, Linkedin, Mail } from "lucide-react"
 
 interface SocialLink {
   platform: string
