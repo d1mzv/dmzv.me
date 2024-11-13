@@ -2,8 +2,8 @@ import { MeSection } from "@/components/sections/me-section"
 import { ProjectsPage } from "@/app/projects/page"
 import { CareerPage } from "@/app/career/page"
 import { YoutubePage } from "@/app/youtube/page"
-import { BlogPage } from "@/app/blog/page"
 import { Suspense } from "react"
+import BlogPage from './blog/page'
 
 export default function Home() {
   return (
