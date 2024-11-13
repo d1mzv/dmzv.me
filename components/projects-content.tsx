@@ -98,9 +98,7 @@ export function ProjectsContent() {
           .map((project) => (
             <Card
               key={project.name}
-              className={cn(
-                "cursor-pointer transition-all hover:shadow-md opacity-70 overflow-hidden"
-              )}
+              className={cn("cursor-pointer transition-all hover:shadow-md overflow-hidden")}
               onClick={() => setExpandedProject(
                 expandedProject === project.name ? null : project.name
               )}
