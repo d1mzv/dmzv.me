@@ -2,7 +2,6 @@ import { MeSection } from "@/components/sections/me-section"
 import { ProjectsContent } from "@/components/projects-content"
 import { CareerContent } from "@/components/career-content"
 import { YoutubeContent } from "@/components/youtube-content"
-import { Suspense } from "react"
 import BlogPage from './blog/page'
 
 export const dynamic = 'force-static'
