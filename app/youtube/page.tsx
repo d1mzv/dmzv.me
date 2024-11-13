@@ -52,7 +52,6 @@ export function YoutubePage() {
 export default function YoutubeRoute() {
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">YouTube</h1>
       <YoutubePage />
     </div>
   )

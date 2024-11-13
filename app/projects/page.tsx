@@ -131,7 +131,6 @@ export function ProjectsPage() {
 export default function ProjectsRoute() {
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">Projects</h1>
       <ProjectsPage />
     </div>
   )

@@ -41,7 +41,7 @@ const jobs: Job[] = [
   },
 ]
 
-function CareerContent() {
+export function CareerContent() {
   const [expandedJob, setExpandedJob] = useState<string | null>(null)
 
   return (
