@@ -5,37 +5,32 @@ import { YoutubeContent } from "@/components/youtube-content"
 import { Suspense } from "react"
 import BlogPage from './blog/page'
 
-export default function Home() {
+export const dynamic = 'force-static'
+export const revalidate = false
+
+export default async function Page() {
   return (
     <div className="space-y-8">
       <MeSection />
       
       <section id="projects" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Projects</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <ProjectsContent />
-        </Suspense>
+        <ProjectsContent />
       </section>
       
       <section id="career" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Career</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <CareerContent />
-        </Suspense>
+        <CareerContent />
       </section>
       
       <section id="youtube" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Videos</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <YoutubeContent />
-        </Suspense>
+        <YoutubeContent />
       </section>
       
       <section id="blog" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Blog</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <BlogPage />
-        </Suspense>
+        <BlogPage />
       </section>
     </div>
   )
