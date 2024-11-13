@@ -2,14 +2,15 @@ import { notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getPostBySlug, getAllPosts, type PostMetadata } from "@/lib/mdx"
 
-interface Props {
-  params: {
-    slug: string;
-  }
+type PageProps = {
+  params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export default async function BlogPost({ params }: Props) {
+export default async function BlogPost({
+  params,
+  // searchParams,
+}: PageProps) {
   const post = await getPostBySlug(params.slug)
 
   if (!post?.frontmatter) {
