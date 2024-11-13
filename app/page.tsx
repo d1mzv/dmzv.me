@@ -12,17 +12,23 @@ export default function Home() {
       
       <section id="projects" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Projects</h2>
-        <ProjectsContent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectsContent />
+        </Suspense>
       </section>
       
       <section id="career" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Career</h2>
-        <CareerContent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <CareerContent />
+        </Suspense>
       </section>
       
       <section id="youtube" className="pt-8">
         <h2 className="text-3xl font-bold mb-4">Videos</h2>
-        <YoutubeContent />
+        <Suspense fallback={<div>Loading...</div>}>
+          <YoutubeContent />
+        </Suspense>
       </section>
       
       <section id="blog" className="pt-8">
