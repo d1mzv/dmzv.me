@@ -41,7 +41,7 @@ const jobs: Job[] = [
   },
 ]
 
-export function CareerPage() {
+function CareerContent() {
   const [expandedJob, setExpandedJob] = useState<string | null>(null)
 
   return (
@@ -80,12 +80,11 @@ export function CareerPage() {
   )
 }
 
-// Default export for route
-export default function CareerRoute() {
+export default function Page() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-8">Career</h1>
-      <CareerPage />
+      <CareerContent />
     </div>
   )
 } 
