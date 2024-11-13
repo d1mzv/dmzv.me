@@ -3,7 +3,7 @@ export function BlogContent() {
     {
       title: "Journey to 1M ARR",
       date: "2024-10-10",
-      description: "In Progress...",
+      description: "In Progress",
       slug: "journey-in-tech",
     },
   ]
