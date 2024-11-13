@@ -72,12 +72,15 @@ export function MainNav({ variant }: MainNavProps) {
       className="w-full"
       onValueChange={handleNavigation}
     >
-      <TabsList className="grid w-full grid-cols-5">
+      <TabsList className="grid w-full grid-cols-5 bg-transparent">
         {tabs.map((tab) => (
           <TabsTrigger
             key={tab.value}
             value={tab.value}
-            className={cn("text-sm font-medium transition-all")}
+            className={cn(
+              "text-sm font-medium transition-all data-[state=active]:bg-transparent",
+              "data-[state=active]:text-foreground data-[state=active]:shadow-none"
+            )}
           >
             {tab.name}
           </TabsTrigger>
