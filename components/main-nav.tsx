@@ -8,10 +8,10 @@ import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
 const tabs = [
   { name: "🏠 Home", value: "/", sectionId: "me" },
-  { name: "🚀 Projects", value: "/projects", sectionId: "projects" },
-  { name: "💼 Career", value: "/career", sectionId: "career" },
-  { name: "📺 Videos", value: "/youtube", sectionId: "youtube" },
-  { name: "📝 Blog", value: "/blog", sectionId: "blog" },
+  { name: "🚀 Projects", value: "/#projects", sectionId: "projects" },
+  { name: "💼 Career", value: "/#career", sectionId: "career" },
+  { name: "📺 Videos", value: "/#youtube", sectionId: "youtube" },
+  { name: "📝 Blog", value: "/#blog", sectionId: "blog" },
 ]
 
 interface MainNavProps {
@@ -37,17 +37,11 @@ export function MainNav({ variant }: MainNavProps) {
   }
 
   const handleNavigation = (value: string) => {
-    if (pathname === "/") {
-      if (value === "/") {
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      } else {
-        const tab = tabs.find(t => t.value === value)
-        if (tab) {
-          scrollToSection(tab.sectionId)
-        }
-      }
+    if (value === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
     } else {
-      router.push(value)
+      const sectionId = value.replace("/#", "")
+      scrollToSection(sectionId)
     }
   }
 
@@ -75,7 +69,7 @@ export function MainNav({ variant }: MainNavProps) {
 
   return (
     <Tabs
-      defaultValue={pathname}
+      defaultValue={pathname === "/" ? "/" : `/#${pathname.slice(1)}`}
       className="w-full"
       onValueChange={handleNavigation}
     >

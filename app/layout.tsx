@@ -52,28 +52,32 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <div className="fixed top-2 right-4 z-50">
-              <ThemeToggle />
-            </div>
-            <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-              <div className="container max-w-3xl mx-auto">
-                <div className="flex h-14 items-center justify-center">
-                  <Suspense fallback={<div>Loading...</div>}>
-                    <MainNav variant="desktop" />
-                  </Suspense>
-                  <div className="md:hidden absolute right-4">
-                    <MobileNav />
+          <Suspense fallback={<div>Loading app...</div>}>
+            <div className="flex min-h-screen flex-col">
+              <div className="fixed top-2 right-4 z-50">
+                <ThemeToggle />
+              </div>
+              <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+                <div className="container max-w-3xl mx-auto">
+                  <div className="flex h-14 items-center justify-center">
+                    <Suspense fallback={<div>Loading navigation...</div>}>
+                      <MainNav variant="desktop" />
+                    </Suspense>
+                    <div className="md:hidden absolute right-4">
+                      <Suspense fallback={null}>
+                        <MobileNav />
+                      </Suspense>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </header>
-            <main className="flex-1">
-              <div className="container max-w-3xl mx-auto py-6">
-                {children}
-              </div>
-            </main>
-          </div>
+              </header>
+              <main className="flex-1">
+                <div className="container max-w-3xl mx-auto py-6">
+                  {children}
+                </div>
+              </main>
+            </div>
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
