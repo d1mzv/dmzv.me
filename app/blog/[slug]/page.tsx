@@ -2,12 +2,15 @@ import { notFound } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getPostBySlug, getAllPosts, type PostMetadata } from "@/lib/mdx"
 
+type Params = Promise<{ slug: string }>
+
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string }
+  params: Params
 }) {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params
+  const post = await getPostBySlug(slug)
 
   if (!post?.frontmatter) {
     return notFound()
