@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardTitle } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import Image from 'next/image'
 
@@ -47,46 +47,46 @@ export function CareerContent() {
       {jobs.map((job) => (
         <Card
           key={job.company}
-          className={cn("cursor-pointer transition-all hover:shadow-md")}
+          className={cn("cursor-pointer transition-all hover:shadow-md h-[92px]")}
           onClick={() => setExpandedJob(
             expandedJob === job.company ? null : job.company
           )}
         >
-          <div className="flex">
-            <div className="flex-shrink-0 w-12 bg-muted flex items-center justify-center">
+          <div className="flex h-full">
+            <div className="flex-shrink-0 w-16 bg-muted flex items-center justify-center">
               {job.imageUrl && (
-                <div className="relative w-8 h-8">
+                <div className="relative w-12 h-12">
                   <Image
                     src={job.imageUrl}
                     alt={`${job.company} logo`}
                     fill
                     className="object-contain"
-                    sizes="32px"
+                    sizes="48px"
                   />
                 </div>
               )}
             </div>
-            <div className="flex-1">
-              <CardHeader>
-                <CardTitle className="flex justify-between items-center">
-                  <span>{job.company}</span>
-                  <span className="text-sm text-muted-foreground">{job.period}</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{job.description}</p>
-                {expandedJob === job.company && job.imageUrl && (
-                  <div className="mt-4">
-                    <Image 
-                      src={job.imageUrl}
-                      alt={job.company}
-                      width={800}
-                      height={400}
-                      className="rounded-lg"
-                    />
-                  </div>
-                )}
-              </CardContent>
+            <div className="flex-1 flex flex-col py-3">
+              <CardTitle className="flex justify-between items-center text-base px-4">
+                <span className="truncate">{job.company}</span>
+                <span className="text-sm text-muted-foreground shrink-0 ml-2">{job.period}</span>
+              </CardTitle>
+              <div className="flex-1 flex items-center">
+                <p className="text-sm text-muted-foreground line-clamp-2 leading-[1.35] px-4">
+                  {job.description}
+                </p>
+              </div>
+              {expandedJob === job.company && job.imageUrl && (
+                <div className="mt-4">
+                  <Image 
+                    src={job.imageUrl}
+                    alt={job.company}
+                    width={800}
+                    height={400}
+                    className="rounded-lg"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </Card>
