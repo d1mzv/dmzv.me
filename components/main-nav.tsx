@@ -4,14 +4,13 @@ import { cn } from "@/lib/utils"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { usePathname } from "next/navigation"
 import { useEffect } from "react"
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
 const tabs = [
-  { name: "🏠 Home", value: "/", sectionId: "me" },
-  { name: "🚀 Projects", value: "/#projects", sectionId: "projects" },
-  { name: "💼 Career", value: "/#career", sectionId: "career" },
-  { name: "📺 Videos", value: "/#youtube", sectionId: "youtube" },
-  { name: "📝 Blog", value: "/#blog", sectionId: "blog" },
+  { name: "🏠 Home", emoji: "🏠", value: "/", sectionId: "me" },
+  { name: "🚀 Projects", emoji: "🚀", value: "/#projects", sectionId: "projects" },
+  { name: "💼 Career", emoji: "💼", value: "/#career", sectionId: "career" },
+  { name: "📺 Videos", emoji: "📺", value: "/#youtube", sectionId: "youtube" },
+  { name: "📝 Blog", emoji: "📝", value: "/#blog", sectionId: "blog" },
 ]
 
 interface MainNavProps {
@@ -51,21 +50,6 @@ export function MainNav({ variant }: MainNavProps) {
     }
   }, [])
 
-  if (variant === "mobile") {
-    return (
-      <>
-        {tabs.map((tab) => (
-          <DropdownMenuItem
-            key={tab.value}
-            onClick={() => handleNavigation(tab.value)}
-          >
-            {tab.name}
-          </DropdownMenuItem>
-        ))}
-      </>
-    )
-  }
-
   return (
     <Tabs
       defaultValue={pathname === "/" ? "/" : `/#${pathname.slice(1)}`}
@@ -82,7 +66,8 @@ export function MainNav({ variant }: MainNavProps) {
               "data-[state=active]:text-foreground data-[state=active]:shadow-none"
             )}
           >
-            {tab.name}
+            <span className="md:hidden">{tab.emoji}</span>
+            <span className="hidden md:inline">{tab.name}</span>
           </TabsTrigger>
         ))}
       </TabsList>
