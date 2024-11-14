@@ -14,25 +14,25 @@ interface Job {
 const jobs: Job[] = [
   {
     company: "PlanRadar",
-    description: "B2B, documentation and task management in construction",
+    description: "Documentation and task management in construction",
     period: "",
     imageUrl: "/company-logos/planradar_logo.jpeg"
   },
   {
     company: "Surprise",
-    description: "Gamified platform for enhancing employee engagement and productivity through task-based incentives",
+    description: "Employee engagement and productivity",
     period: "",
     imageUrl: "/company-logos/surprise_hr_logo.jpeg"
   },
   {
     company: "EPAM",
-    description: "Global software engineering and IT consulting services provider",
+    description: "Risk reporting",
     period: "",
     imageUrl: "/company-logos/epam_systems_logo.jpeg"
   },
   {
     company: "SimCorp",
-    description: "Investment management solutions provider",
+    description: "Investment management",
     period: "",
     imageUrl: "/company-logos/simcorp_logo.jpeg"
   },
