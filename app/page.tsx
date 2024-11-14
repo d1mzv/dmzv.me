@@ -41,6 +41,10 @@ export default function Page() {
           <BlogContent />
         </section>
       </Suspense>
+
+      <footer className="text-center text-sm text-muted-foreground pt-8 pb-4">
+        © 2024
+      </footer>
     </div>
   )
 }
