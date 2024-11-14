@@ -17,7 +17,7 @@ interface MainNavProps {
   variant: "mobile" | "desktop"
 }
 
-export function MainNav({ variant }: MainNavProps) {
+export function MainNav({}: MainNavProps) {
   const pathname = usePathname()
 
   const scrollToSection = (elementId: string) => {
