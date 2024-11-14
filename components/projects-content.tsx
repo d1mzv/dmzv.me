@@ -98,22 +98,11 @@ export function ProjectsContent() {
           .map((project) => (
             <Card
               key={project.name}
-              className={cn("cursor-pointer transition-all hover:shadow-md overflow-hidden")}
+              className={cn("cursor-pointer transition-all hover:shadow-md")}
               onClick={() => setExpandedProject(
                 expandedProject === project.name ? null : project.name
               )}
             >
-              <div className="relative w-full aspect-video bg-muted flex items-center justify-center">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.name}
-                  fill
-                  priority
-                  className="object-contain p-4"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="w-full h-[1px] bg-border" />
               <CardContent className="px-4 py-3 min-h-[3.5rem] flex items-center">
                 <p className="text-sm leading-relaxed">
                   <span className="font-semibold">{project.name}</span>
