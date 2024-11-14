@@ -9,7 +9,7 @@ interface Project {
   name: string
   description: string
   status: "active" | "inactive"
-  url?: string
+  url: string
   imageUrl: string
 }
 
@@ -18,42 +18,52 @@ const projects: Project[] = [
     name: "Savedeck",
     description: "Unify and auto-sort your bookmarks",
     status: "active",
+    url: "https://apps.apple.com/app/id6450510327",
     imageUrl: "/savedeck-img.png",
   },
   {
     name: "Memobase",
     description: "Learn anything fast with AI flashcards",
     status: "active",
+    url: "https://apps.apple.com/app/id6502102605",
     imageUrl: "/memobase-img.png",
   },
   {
     name: "Streakmap",
     description: "Visualise your habit progression",
     status: "active",
+    url: "https://www.streakmap.com/",
     imageUrl: "streakmap-img2.png",
   },
   {
     name: "Nadebook",
     description: "Practice Tool for CS",
     status: "active",
+    url: "https://www.nadebook.com/",
     imageUrl: "nadebook-img.png",
   },
   {
     name: "Mentisoft",
     description: "Software Outsourcing Agency",
     status: "inactive",
+    url: "",
     imageUrl: "mentisoft-img.png",
   },
   {
     name: "EasyTO",
     description: "Telegram bot for calculating inspection costs",
     status: "inactive",
+    url: "",
     imageUrl: "easyto-img.png",
   },
 ]
 
 export function ProjectsContent() {
-  const [expandedProject, setExpandedProject] = useState<string | null>(null)
+  const handleProjectClick = (project: Project) => {
+    if (project.status === "active" && project.url) {
+      window.open(project.url, '_blank')
+    }
+  }
 
   return (
     <div className="space-y-6">
@@ -65,9 +75,7 @@ export function ProjectsContent() {
             <Card
               key={project.name}
               className={cn("cursor-pointer transition-all hover:shadow-md overflow-hidden")}
-              onClick={() => setExpandedProject(
-                expandedProject === project.name ? null : project.name
-              )}
+              onClick={() => handleProjectClick(project)}
             >
               <div className="relative w-full aspect-video bg-muted flex items-center justify-center">
                 <Image
@@ -99,9 +107,6 @@ export function ProjectsContent() {
             <Card
               key={project.name}
               className={cn("cursor-pointer transition-all hover:shadow-md overflow-hidden")}
-              onClick={() => setExpandedProject(
-                expandedProject === project.name ? null : project.name
-              )}
             >
               <div className="relative w-full h-[120px] bg-muted flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent from-65% to-background z-10" />
