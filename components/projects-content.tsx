@@ -103,8 +103,8 @@ export function ProjectsContent() {
                 expandedProject === project.name ? null : project.name
               )}
             >
-              <div className="relative w-full h-[120px] bg-muted flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/0 to-background" />
+              <div className="relative w-full h-[120px] bg-muted flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent from-50% to-background z-10" />
                 <Image
                   src={project.imageUrl}
                   alt={project.name}
