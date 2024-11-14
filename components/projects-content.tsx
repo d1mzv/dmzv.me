@@ -80,8 +80,8 @@ export function ProjectsContent() {
                 />
               </div>
               <div className="w-full h-[1px] bg-border" />
-              <CardContent className="p-4">
-                <p className="text-sm">
+              <CardContent className="px-4 py-3 min-h-[3.5rem] flex items-center">
+                <p className="text-sm leading-relaxed">
                   <span className="font-semibold">{project.name}</span>
                   {" — "}
                   <span className="text-muted-foreground">{project.description}</span>
@@ -114,8 +114,8 @@ export function ProjectsContent() {
                 />
               </div>
               <div className="w-full h-[1px] bg-border" />
-              <CardContent className="p-4">
-                <p className="text-sm">
+              <CardContent className="px-4 py-3 min-h-[3.5rem] flex items-center">
+                <p className="text-sm leading-relaxed">
                   <span className="font-semibold">{project.name}</span>
                   {" — "}
                   <span className="text-muted-foreground">{project.description}</span>
