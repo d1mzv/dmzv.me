@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { useState } from "react"
-import { Twitter, Linkedin, Mail } from "lucide-react"
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { Twitter, Linkedin, Mail } from "lucide-react";
 
 interface SocialLink {
-  platform: string
-  username: string
-  url: string
-  icon: React.ComponentType<{ className?: string }>
+  platform: string;
+  username: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const socialLinks: SocialLink[] = [
@@ -37,10 +37,10 @@ const socialLinks: SocialLink[] = [
     url: "mailto:dmitry.maznev@gmail.com",
     icon: Mail,
   },
-]
+];
 
 export function MeSection() {
-  const [imageError, setImageError] = useState(false)
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section id="me" className="pt-4">
@@ -66,12 +66,15 @@ export function MeSection() {
             <div className="text-center space-y-2">
               <h1 className="text-2xl font-bold">Hello, I&apos;m Dima</h1>
               <p className="text-muted-foreground">
-                I like building stuff
+                I build and manage products. Let&apos;s connect and share ideas
               </p>
-              <p className="text-sm text-muted-foreground">@dimamzv</p>
+              {/* <p className="text-muted-foreground">
+                Let&apos;s connect and share ideas
+              </p> */}
+              {/* <p className="text-sm text-muted-foreground">@dimamzv</p> */}
               <div className="flex justify-center space-x-4 pt-2">
                 {socialLinks.map((link) => {
-                  const Icon = link.icon
+                  const Icon = link.icon;
                   return (
                     <a
                       key={link.platform}
@@ -84,7 +87,7 @@ export function MeSection() {
                       <Icon className="h-5 w-5" />
                       <span className="sr-only">{link.platform}</span>
                     </a>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -92,5 +95,5 @@ export function MeSection() {
         </CardContent>
       </Card>
     </section>
-  )
-} 
+  );
+}
