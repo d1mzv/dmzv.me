@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dima Maznev | Personal Website",
-  description: "Let's connect",
+  description: "Let's connect!",
 };
 
 export default function RootLayout({
