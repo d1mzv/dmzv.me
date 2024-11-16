@@ -77,7 +77,7 @@ export function MeSection() {
               <div className="text-center space-y-2">
                 <h1 className="text-2xl font-bold">Hello, I&apos;m Dima</h1>
                 <p className="text-muted-foreground">
-                  I build and manage products. Let&apos;s&nbsp;connect&nbsp;and&nbsp;share&nbsp;ideas
+                  I build and manage products. Let&apos;s&nbsp;connect&nbsp;and&nbsp;share&nbsp;ideas!
                 </p>
                 <div className="flex justify-center space-x-4 pt-2">
                   {socialLinks.map((link) => {
