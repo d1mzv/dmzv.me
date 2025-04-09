@@ -43,7 +43,7 @@ export default function Page() {
       </Suspense>
 
       <footer className="text-center text-sm text-muted-foreground pt-4 pb-4">
-        © 2024
+        © 2025
       </footer>
     </div>
   )
