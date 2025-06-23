@@ -21,11 +21,11 @@ const projects: Project[] = [
     imageUrl: "/savedeck-img.png",
   },
   {
-    name: "Memobase",
-    description: "Learn anything fast with AI flashcards",
+    name: "Meal Scope",
+    description: "Stay fit by tracking your meals easily",
     status: "active",
-    url: "https://apps.apple.com/app/id6502102605",
-    imageUrl: "/memobase-img.png",
+    url: "https://www.mealscope.app/",
+    imageUrl: "/mealscope-img.png",
   },
   {
     name: "Streakmap",
@@ -33,6 +33,13 @@ const projects: Project[] = [
     status: "active",
     url: "https://www.streakmap.com/",
     imageUrl: "streakmap-img2.png",
+  },
+  {
+    name: "Memobase",
+    description: "Learn anything fast with AI flashcards",
+    status: "active",
+    url: "https://apps.apple.com/app/id6502102605",
+    imageUrl: "/memobase-img.png",
   },
   {
     name: "Nadebook",
