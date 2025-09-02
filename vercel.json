@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/kb",
+      "destination": "https://your-quartz-project.vercel.app"
+    },
+    {
+      "source": "/kb/(.*)",
+      "destination": "https://your-quartz-project.vercel.app/$1"
+    }
+  ]
+}
