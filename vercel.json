@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/kb",
-      "destination": "https://your-quartz-project.vercel.app"
+      "destination": "https://quartz-54kty7r4k-d1mzvs-projects.vercel.app/"
     },
     {
       "source": "/kb/(.*)",
-      "destination": "https://your-quartz-project.vercel.app/$1"
+      "destination": "https://quartz-54kty7r4k-d1mzvs-projects.vercel.app//$1"
     }
   ]
 }
