@@ -6,7 +6,7 @@
     },
     {
       "source": "/kb/(.*)",
-      "destination": "https://quartz-54kty7r4k-d1mzvs-projects.vercel.app//$1"
+      "destination": "https://quartz-54kty7r4k-d1mzvs-projects.vercel.app/$1"
     }
   ]
 }
